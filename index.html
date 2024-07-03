@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER Results</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Named Entity Recognition Results</h1>
+        <form action="/" method="post">
+            <label for="text">Enter text:</label>
+            <textarea id="text" name="text" rows="4" placeholder="Type your text here..."></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        
+        {% if text %}
+        <div class="results">
+            <p><strong>Input Text:</strong> {{ text }}</p>
+            {{ html | safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
